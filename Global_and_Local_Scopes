@@ -1,0 +1,28 @@
+#bad example of global and local variables
+
+def spam():
+  eggs = 99
+  
+spam()
+print(eggs)
+---
+
+def spam():
+  eggs = 99
+  bacon()
+  print(eggs)
+  
+def bacon():
+  ham = 101
+  eggs = 0
+  
+spam()
+#code will return 99 because of local scope
+---
+
+def spam():
+  print(eggs)
+
+eggs = 42
+spam()
+#will return 42 because of the global variable
